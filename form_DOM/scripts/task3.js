@@ -3,16 +3,33 @@
 /* FUNCTIONS */
 
 // Step 1: Using function declaration, define a function named add that takes two arguments, number1 and number2
-
+function add(number1, number2){
+    
 // Step 2: In the function, return the sum of the parameters number1 and number2
-
+return number1 + number2;
+}
 // Step 3: Step 3: Using function declaration, define another function named addNumbers that gets the values of two HTML form controls with IDs of addend1 and addend2. Pass them to the add function
+function addNumbers(){
+    let number1 = document.querySelector('#addend1').value;
+    document.querySelector('#addend1').value = '';
+    let number2 = document.querySelector('#addend2').value;
+    document.querySelector('#addend2').value = '';
+    const a1 = parseInt(number1);
+    const a2 = parseInt(number2);
+
+    const suma = add(a1,a2);
 
 // Step 4: Assign the return value to an HTML form element with an ID of sum
-
+document.querySelector('#sum').value = suma;
+}
 // Step 5: Add a "click" event listener to the HTML button with an ID of addNumbers that calls the addNumbers function
+const sumButton = document.querySelector('#addNumbers');
+sumButton.addEventListener("click", addNumbers);
 
 // Step 6: Using function expressions, repeat Steps 1-5 with new functions named subtract and subtractNumbers and HTML form controls with IDs of minuend, subtrahend, difference and subtractNumbers
+
+
+
 
 // Step 7: Using arrow functions, repeat Steps 1-5 with new functions named multiply and mulitplyNumbers and HTML form controls with IDs of factor1, factor2, product and multiplyNumbers
 
