@@ -31,20 +31,20 @@ document.querySelector('img').setAttribute('src', my_picture);
 var favorite_food = ["Chaufa", " Causa Limeña", " Pasta"];
 
 // Step 2: place the values of the favorite foods variable into the HTML file
-
 document.querySelector('#food').innerHTML = favorite_food;
+
 // Step 3: declare and instantiate a variable to hold another favorite food
-
 var fav_food_extra = " Pizza";
+
 // Step 4: add the variable holding another favorite food to the favorite food array
-
 favorite_food.push(fav_food_extra);
+
 // Step 5: repeat Step 2
-
 document.querySelector('#food').innerHTML = favorite_food;
-// Step 6: remove the first element in the favorite foods array
 
+// Step 6: remove the first element in the favorite foods array
 favorite_food.shift();
+
 // Step 7: repeat Step 2
 document.querySelector('#food').innerHTML = favorite_food;
 
