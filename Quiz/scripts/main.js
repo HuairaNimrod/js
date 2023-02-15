@@ -25,6 +25,7 @@ async function getQuestionsData(url) {
 
         h4.textContent = premise.question;
         answer.push(premise.answer);
+        userAns.push("a");
         question.appendChild(h4);
         var i =0;
         // option.textContent = premise.options;
@@ -39,7 +40,10 @@ async function getQuestionsData(url) {
             input.value = i;
             input.name = premise.answer;
             input.addEventListener("click", function(){
-            userAns.push(input.value);
+                console.log(input.value);
+                console.log(userAns);
+                let index = questions.indexOf(premise); //captures the index of the question
+                userAns[index]=input.value;
             });
 
             label.for = element;
@@ -65,28 +69,55 @@ async function getQuestionsData(url) {
 };
 
 function grade(){
-
-    console.log(answer);
-    console.log(userAns);
-
     
-
     if(answer.length!= userAns.length){
         if(confirm("You have remaining questions without answer, are you sure you want to submit it?")){
             nextWindow();
         };
 
     }
+    else{
+        nextWindow();
+    }
     
 }
 
 function nextWindow(){
 
-    let score = "(:";
+    
     document.querySelector('div.quiz').style.display = "none";
     document.querySelector('button').style.display = "none";
+    document.querySelector('main').style.display = "none";
+
+   
+    console.log(answer);
+    console.log(userAns);
+
+    var score = answer.length;
+    var total = 0;
+    var num = 0;
+
+    for (question of answer) { 
+        console.log(userAns[num]);
+        if(question == userAns[num] ){
+            total++;
+        }
+        num++;
+        console.log(num);
+      }
+        
+        // console.log(num);
+   
+
+    score = total/score;
+    score = score.toFixed(2) * 100;
+    // console.log(score);
+   
     const span = document.querySelector('span');
-    span.innerText = `Your score is score ${score}`;
+    span.innerText = `Your score is ${score}%`;
+    score=0;
+    total = 0;
+    num = 0;
 
 }
 

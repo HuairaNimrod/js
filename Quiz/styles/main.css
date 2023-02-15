@@ -1,6 +1,13 @@
+body{
+    margin: 30px 30px;
+    background-color : rgb(27,70,136);
+}
+main{
+    background-color: #ffffff;
+    padding: 40px;
+}
 .quiz{
     color : rgb(27,70,136);
-    margin: 20px;
 }
 
 div h4{
@@ -42,5 +49,9 @@ button:active{
 
     display: flex;
     justify-content: center;
+    /* background-color : rgb(27,70,136); */
+    line-height: 700px;
+    color: #ffffff;
+    font-size: 30px;
 
 }
