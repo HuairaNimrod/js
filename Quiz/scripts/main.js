@@ -70,7 +70,9 @@ async function getQuestionsData(url) {
 
 function grade(){
     
-    if(answer.length!= userAns.length){
+    const found = userAns.find(element => element=="a"); //find helps to find  an element in an array
+    // console.log("------>"+found);
+    if(found == "a"){
         if(confirm("You have remaining questions without answer, are you sure you want to submit it?")){
             nextWindow();
         };
